@@ -1,0 +1,4 @@
+2025-12-01 10:21:33 INFO  Starting FastLog example
+2025-12-01 10:21:34 DEBUG User logged in
+2025-12-01 10:21:35 WARN  High CPU usage detected
+

@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fastlog"
+version = "1.0.0"
+description = "FASTLOG: High-speed hybrid compression + encryption engine"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [{ name = "Shakeeb Salman" }]
+license = { text = "MIT" }
+dependencies = []
+
+[project.scripts]
+fastlog = "fastlog.cli:main"
+
+[tool.setuptools]
+packages = ["fastlog"]
+include-package-data = true
+
+[tool.setuptools.ext_modules]
+warphybrid = {
+    name = "warphybrid",
+    sources = ["fastlog/warphybrid.c"],
+    include-dirs = ["/opt/homebrew/include", "/usr/local/include"],
+    libraries = ["lz4"],
+    library-dirs = ["/opt/homebrew/lib", "/usr/local/lib"]
+}
